@@ -16,6 +16,8 @@ export default {
        primary:"#246BFD",
        text:"#04060F",
        light_text:"#9FA8BC",
+       bg_2:"#F2F2F2",
+       danger:"#F33F19"
       },
     },
   },
