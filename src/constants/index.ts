@@ -1,6 +1,16 @@
 export const recentFolders = [
-    "Plan de communicat...", "Planning Activités 20...", "Village Africa", "Documents",
-    "Team Building Nov 2...", "Ordres de Missions", "Rapports", "Youth African Forum...", "CAN 2024", "Pétanque 2023"
+    "CAN 2024",
+    "Documents",
+    "Indépendance 2023",
+    "Ordres de Missions",
+    "Pétanque 2023",
+    "Planning Activités 2023",
+    "Plan de communication",
+    "Rapports",
+    "Team Building Nov 2023",
+    "Village Africa", 
+    "Youth African Forum...",   
+    
   ];
 
  export const recentDocuments = [

@@ -17,7 +17,8 @@ export default {
        text:"#04060F",
        light_text:"#9FA8BC",
        bg_2:"#F2F2F2",
-       danger:"#F33F19"
+       danger:"#F33F19",
+       gray:"#E7EBF3"
       },
     },
   },
