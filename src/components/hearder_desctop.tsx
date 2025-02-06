@@ -29,7 +29,7 @@ const Hearder_desctop = () => {
               <Image src={Vector} alt="item5" className="w-[16px] h-[16] mt-3 " onClick={() => setMenuOpen(!menuOpen)} />
 
             {menuOpen && (
-              <div className="absolute right-0 mt-12 w-40 bg-white border border-gray-200 rounded-lg shadow-lg">
+              <div className="absolute right-0 mt-12 w-40 bg-white border border-gray z-40 rounded-lg shadow-lg">
                 <button className="w-full gap-4 flex text-left px-4 py-2  text-[14px] font-Urbanist text-light_text hover:bg-gray-100">
                   <Image src={profil} alt="item5" className="w-[20px] h-[20] " />
                    Profil

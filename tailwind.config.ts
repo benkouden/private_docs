@@ -18,7 +18,10 @@ export default {
        light_text:"#9FA8BC",
        bg_2:"#F2F2F2",
        danger:"#F33F19",
-       gray:"#E7EBF3"
+       gray:"#E7EBF3",
+       sucess:"#49C91E",
+       succes_light :" #ECF9E8"
+
       },
     },
   },

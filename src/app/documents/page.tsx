@@ -104,7 +104,7 @@ const Documents = () => {
                 <input 
                     type="text" 
                     placeholder="         Rechercher un document                 "
-                    id="email"
+                    
                     className="w-[350px] relative py-3  px-4 font-Urbanist text-[16px] font-normal leading-[19.2px] border border-blue_Gray rounded-full focus:outline-none focus:ring-2"
                 />
                <Image src={Seeting} alt="item5" className=" z-30 absolute top-[300px] h-[24px] w-[24px] right-[160px]" />
