@@ -23,27 +23,19 @@ import Case from '../../assets/Rectangle.svg'
 import { equipes, users } from '@/constants'
 
 import Hearder_desctop from '@/components/hearder_desctop'
-
-const getInitials = (name) => {
-  if (!name) return ''
-  const words = name.split(' ')
-  return words.length > 1
-    ? `${words[0][0]}${words[1][0]}`.toUpperCase()
-    : words[0][0].toUpperCase()
-}
-
-// Fonction pour générer une couleur de fond dynamique
-const getColor = (name) => {
-  const colors = [
-    'bg-blue-500',
-    'bg-green-500',
-    'bg-red-500',
-    'bg-yellow-500',
-    'bg-purple-500',
-  ]
-  const index = name.charCodeAt(0) % colors.length
-  return colors[index]
-}
+const getInitials = (name: string): string => {
+    if (!name) return '';
+    const words = name.split(' ');
+    return words.length > 1
+      ? `${words[0][0]}${words[1][0]}`.toUpperCase()
+      : words[0][0].toUpperCase();
+  };
+  
+  const getColor = (name: string): string => {
+    const colors = ['bg-blue-500', 'bg-green-500', 'bg-red-500', 'bg-yellow-500', 'bg-purple-500'];
+    const index = name.charCodeAt(0) % colors.length;
+    return colors[index];
+  };
 
 const Users = () => {
   return (
