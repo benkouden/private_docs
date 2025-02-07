@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import close from "../assets/close.svg";
+import { Organisation } from '@/app/organisations/page';
 
 interface DeleteOrganisationsProps {
     onClose: () => void;

@@ -28,7 +28,8 @@ import Hearder_desctop from '@/components/hearder_desctop'
 import Add_organisation from '@/components/add_organisation'
 import Delete_organisations from '@/components/delete_organisations'
 
-interface Organisation {
+
+export interface Organisation {
   name: string;
   users: number;
   email: string;
