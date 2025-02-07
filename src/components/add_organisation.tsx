@@ -17,11 +17,11 @@ const Add_organisation = ({ onClose }: { onClose: () => void }) => {
       <form className='w-full flex flex-col gap-10 items-center'>
         <div className='relative w-full flex items-center gap-[8px]'>
           <label className='absolute -top-3 left-3 font-Urbanist text-[12px] font-bold leading-[25px] bg-white px-1 text-xs text-light_text'>
-            Nom de l'entreprise
+            Nom de l&apos;entreprise
           </label>
           <input
             type='text'
-            placeholder="  Nom de l'entreprise"
+            placeholder="  Nom de l&apos;entreprise"
             className='w-full py-3 px-4 font-Urbanist text-[16px] font-normal leading-[19.2px] border placeholder-gray border-blue_Gray rounded-full focus:outline-none focus:ring-2'
           />
         </div>
@@ -31,7 +31,7 @@ const Add_organisation = ({ onClose }: { onClose: () => void }) => {
           </label>
           <input
             type='text'
-            placeholder="  Nom de l'admin"
+            placeholder="  Nom de l&apos;admin"
             id='nom'
             className='w-full py-3 px-4 font-Urbanist placeholder-gray text-[16px] font-normal leading-[19.2px] border border-blue_Gray rounded-full focus:outline-none focus:ring-2'
           />
@@ -42,7 +42,7 @@ const Add_organisation = ({ onClose }: { onClose: () => void }) => {
           </label>
           <input
             type='text'
-            placeholder="Prénom de l'admin "
+            placeholder="Prénom de l&apos;admin "
             id='prenom'
             className='w-full py-3 px-4 font-Urbanist placeholder-gray text-[16px] font-normal leading-[19.2px] border border-blue_Gray rounded-full focus:outline-none focus:ring-2'
           />
@@ -56,7 +56,7 @@ const Add_organisation = ({ onClose }: { onClose: () => void }) => {
             type='email'
             id='email'
             className='w-full py-3 px-4 border font-Urbanist placeholder-gray text-[16px] font-normal leading-[19.2px] border-blue_Gray rounded-full focus:outline-none focus:ring-2'
-            placeholder="Adresse e-mail de l'admin"
+            placeholder="Adresse e-mail de l&apos;admin"
           />
         </div>
 
