@@ -1,14 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Add_organisation = ({ onClose }: { onClose: () => void }) => {
-  const [isOpen, setIsOpen] = useState(true); // État pour gérer l'affichage du modal
-
-  const closeModal = () => {
-    setIsOpen(false); // Ferme le modal en changeant l'état
-  };
-
-  if (!isOpen) return null; // Si le modal est fermé, ne rien afficher
-
   return (
     <div className='bg-white p-8 rounded-lg shadow-lg w-[624px] h-[564px]'>
       <div className='flex justify-end'>
