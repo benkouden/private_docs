@@ -1,4 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
+import close from "../assets/close.svg";
+
 
 const Add_organisation = ({ onClose }: { onClose: () => void }) => {
   return (
@@ -8,13 +11,14 @@ const Add_organisation = ({ onClose }: { onClose: () => void }) => {
           onClick={onClose} // Ajout de l'action au clic
           className='text-gray-400 text-2xl'
         >
-          &times;
+          <Image src={close} alt='close' />
+
         </button>
       </div>
       <h1 className='font-urbanist text-[30px] text-text font-bold leading-[40px] text-center mb-6'>
         Ajouter une organisation
       </h1>
-      <form className='w-full flex flex-col gap-10 items-center'>
+      <form className='w-full flex flex-col gap-10 mt-10 items-center'>
         <div className='relative w-full flex items-center gap-[8px]'>
           <label className='absolute -top-3 left-3 font-Urbanist text-[12px] font-bold leading-[25px] bg-white px-1 text-xs text-light_text'>
             Nom de l&apos;entreprise

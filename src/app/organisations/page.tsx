@@ -26,6 +26,7 @@ import { organisations } from '@/constants'
 
 import Hearder_desctop from '@/components/hearder_desctop'
 import Add_organisation from '@/components/add_organisation'
+import Delete_organisations from '@/components/delete_organisations'
 const getInitials = (name: string): string => {
   if (!name) return ''
   const words = name.split(' ')
@@ -47,6 +48,15 @@ const Dashboard = () => {
   )
   const openModal = () => setIsModalOpen(true) // Ouvrir le modal
   const closeModal = () => setIsModalOpen(false) // Fermer le modal
+
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [organisationToDelete, setOrganisationToDelete] = useState(null);
+
+  const closeDeleteModal = () => setIsDeleteModalOpen(false) // Fermer le modal de suppression
+  const openDeleteModal = (organisation: any) => {
+    setOrganisationToDelete(organisation);
+    setIsDeleteModalOpen(true);
+  };
 
   return (
     <div className='flex w-full min-h-screen text-text font-Urbanist overflow-hidden'>
@@ -201,14 +211,17 @@ const Dashboard = () => {
                       </td>
 
                       <td className='py-3 items-end justify-end px-4 '>
-                        <Image src={Trash} alt='item5' className=' mt-2' />
+                         {/* Ouvrir le modal */}
+                        <button onClick={() => openDeleteModal(organisation)}>
+                          <Image src={Trash} alt='Supprimer' className='mt-2' />
+                        </button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            
+
             <div className='flex space-x-2 mt-6 justify-end'>
               <button
                 className='w-[38px] h-[38px] flex items-center justify-center text-light_text'
@@ -245,12 +258,18 @@ const Dashboard = () => {
           </div>
         </div>
       </main>
-      {/* Modal */}
+      {/* Modal add organisations */}
       {isModalOpen && (
         <div className='fixed inset-0 flex items-center justify-center bg-bgmodal z-50'>
           <Add_organisation onClose={closeModal} />
         </div>
       )}
+      {/* Modal Supprimer Organisation */}
+      {isDeleteModalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-bgmodal z-50">
+            <Delete_organisations onClose={closeDeleteModal} organisation={organisationToDelete} />
+          </div>
+        )}
     </div>
   )
 }
