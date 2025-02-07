@@ -6,8 +6,8 @@ import Logo from '../../assets/Logo Private.svg'
 import NavItem1 from '../../assets/home-2.svg'
 import NavItem2 from '../../assets/document-text.svg'
 import NavItem3 from '../../assets/profile-2user.svg'
-import { card } from '@/constants'
 
+import che from '../../assets/Path.svg'
 import cheleft from '../../assets/chevron_left.svg'
 import cheright from '../../assets/chevron-right.svg'
 
@@ -17,12 +17,14 @@ import NavItem4 from '../../assets/archive.svg'
 import NavItem5 from '../../assets/setting-2.svg'
 import NavItem6 from '../../assets/logout1.svg'
 
+import Search from '../../assets/Search.svg'
+import Seeting from '../../assets/setting-3.svg'
+
 import Case from '../../assets/Rectangle.svg'
 
 import { organisations } from '@/constants'
 
 import Hearder_desctop from '@/components/hearder_desctop'
-import Card from '@/components/card'
 const getInitials = (name: string): string => {
   if (!name) return ''
   const words = name.split(' ')
@@ -32,7 +34,7 @@ const getInitials = (name: string): string => {
 }
 const ITEMS_PER_PAGE = 12
 
-const Dashboard = () => {
+const Admin = () => {
   const [currentPage, setCurrentPage] = useState(1)
 
   const totalPages = Math.ceil(organisations.length / ITEMS_PER_PAGE)
@@ -41,10 +43,6 @@ const Dashboard = () => {
     startIndex,
     startIndex + ITEMS_PER_PAGE
   )
-  const filteredData = currentData.filter(
-    (organisation) => organisation.statut === 'Actif' || organisation.statut === 'En attente'
-  )
-  
   return (
     <div className='flex w-full min-h-screen text-text font-Urbanist overflow-hidden'>
       {/* Sidebar */}
@@ -83,15 +81,47 @@ const Dashboard = () => {
 
         <div className='   mt-10'>
           <div className='w-full h-[400]  pt-8 '>
-            <div className='flex space-x-4 py-4'>
-            {card.map((elmt, index) => (
-              <Card key={index} icon={elmt.icon} title= {elmt.name} value={elmt.total} />               
-            ))}
+            <div className=' flex  h-12 px-4 '>
+              <div className=' gap-4 flex  h-12 '>
+                <div className=' flex   '>
+                  <Image
+                    src={Case}
+                    alt='item5'
+                    className='w-[24px] mt-1 h-[24px]'
+                  />
+                  <div className='  items-center flex ml-4 justify-between  py-4 px-3  bg-gray rounded-3xl  w-[200px] h-[18px] '>
+                    <span className='font-urbanist text-[14px] text-light_text font-semibold leading-[20px]'>
+                      Sélectionner une action
+                    </span>
+                    <Image src={che} alt='item5' className='' />
+                  </div>
+                  <div className=' text-center ml-96 justify-center  items-center px-1 flex bg-primary  rounded-3xl  w-[200px] h-[40px] '>
+                    <span className='font-urbanist text-center text-[14px] text-white font-semibold leading-[20px]'>
+                      Ajouter une organisaton
+                    </span>
+                  </div>
+                </div>
+                <div className=' w-full  '>
+                  <Image
+                    src={Search}
+                    alt='item5'
+                    className=' z-30 absolute top-[170px] right-[350px]'
+                  />
+                  <input
+                    type='text'
+                    placeholder='              Rechercher une organisation                 '
+                    className=' relative h-[40px] w-[320px]   font-Urbanist text-[12px] font-normal leading-[19.2px] border border-blue_Gray rounded-full focus:outline-none focus:ring-2'
+                  />
+                  <Image
+                    src={Seeting}
+                    alt='item5'
+                    className=' z-30 absolute top-[165px] right-[70px]'
+                  />
+                </div>
+              </div>
             </div>
-
-            <h2 className="font-urbanist text-[20px]  py-3 text-text font-bold leading-[26px] mt-3">Dernières organisations actives </h2>
-
-            <div className=' mt-6 rounded-xl bg-gray  '>
+            <hr className='mt-8 border-2 border-gray' />
+            <div className=' mt-10 rounded-xl bg-gray  '>
               <table className='min-w-full'>
                 <thead className=' border-gray rounded-t '>
                   <tr className='font-Urbanist text-sm text-left font-bold leading-6 '>
@@ -105,7 +135,7 @@ const Dashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {filteredData.map((organisation, index) => (
+                  {currentData.map((organisation, index) => (
                     <tr
                       key={index}
                       className='border-b-2 border-dotted bg-white border-gray'
@@ -170,7 +200,7 @@ const Dashboard = () => {
                 </tbody>
               </table>
             </div>
-
+            
             <div className='flex space-x-2 mt-6 justify-end'>
               <button
                 className='w-[38px] h-[38px] flex items-center justify-center text-light_text'
@@ -211,4 +241,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Admin
