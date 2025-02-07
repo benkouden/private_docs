@@ -206,7 +206,7 @@ const Users = () => {
                       </td>
                       <td className='py-3'>
                         <span
-                          className={`px-4 py-1 w-full font-Urbanist text-sm font-medium leading-4 rounded-full  ${
+                          className={`px-4 py-1 w-full font-Urbanist text-sm font-medium leading-4 rounded-full text-center inline-block w-[100px]  ${
                             user.status === 'Actif'
                               ? 'bg-succes_light text-sucess'
                               : 'bg-gray text-light_text'

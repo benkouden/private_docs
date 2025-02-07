@@ -20,7 +20,10 @@ export default {
        danger:"#F33F19",
        gray:"#E7EBF3",
        sucess:"#49C91E",
-       succes_light :" #ECF9E8"
+       succes_light :" #ECF9E8",
+       danger_light:"#FDEBE8",
+       info:"#30B2EA",
+       info_light:"#EAF7FC"
 
       },
     },
