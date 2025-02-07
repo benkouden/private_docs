@@ -27,6 +27,15 @@ import { organisations } from '@/constants'
 import Hearder_desctop from '@/components/hearder_desctop'
 import Add_organisation from '@/components/add_organisation'
 import Delete_organisations from '@/components/delete_organisations'
+
+interface Organisation {
+  name: string;
+  users: number;
+  email: string;
+  statut: string;
+
+}
+
 const getInitials = (name: string): string => {
   if (!name) return ''
   const words = name.split(' ')
@@ -50,10 +59,11 @@ const Dashboard = () => {
   const closeModal = () => setIsModalOpen(false) // Fermer le modal
 
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [organisationToDelete, setOrganisationToDelete] = useState(null);
+  const [organisationToDelete, setOrganisationToDelete] = useState<Organisation | null>(null);
+
 
   const closeDeleteModal = () => setIsDeleteModalOpen(false) // Fermer le modal de suppression
-  const openDeleteModal = (organisation: any) => {
+  const openDeleteModal = (organisation: Organisation) => {
     setOrganisationToDelete(organisation);
     setIsDeleteModalOpen(true);
   };

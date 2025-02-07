@@ -2,7 +2,12 @@ import React from 'react'
 import Image from 'next/image';
 import close from "../assets/close.svg";
 
-const Delete_organisations =  ({ onClose, organisation }: { onClose: () => void, organisation: any }) => {
+interface DeleteOrganisationsProps {
+    onClose: () => void;
+    organisation: Organisation | null;
+  }
+
+const Delete_organisations =  ({ onClose, organisation }: DeleteOrganisationsProps) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg w-[624px] h-[272px] ">
         <div className='flex justify-end'>
