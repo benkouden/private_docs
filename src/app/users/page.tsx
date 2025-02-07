@@ -193,20 +193,20 @@ const Users = () => {
                               {getInitials(user.name)}
                             </span>
                           </div>
-                          <span className='ml-2 font-urbanist text-sm font-medium leading-5'>
+                          <span className='ml-2 font-urbanist text-[16px] font-medium leading-5'>
                             {user.name}
                           </span>
                         </div>
                       </td>
-                      <td className='py-3 font-urbanist text-sm font-medium leading-5 '>
+                      <td className='py-3 font-urbanist text-text-[16px] font-medium leading-5 '>
                         {user.email}
                       </td>
-                      <td className='py-3 font-urbanist text-sm font-medium leading-5'>
+                      <td className='py-3 font-urbanist text-[16px] font-medium leading-5'>
                         {user.role}
                       </td>
                       <td className='py-3'>
                         <span
-                          className={`px-4 py-1 w-full font-Urbanist text-sm font-medium leading-4 rounded-full text-center inline-block w-[100px]  ${
+                          className={`px-4 py-1  font-Urbanist text-sm font-medium leading-4 rounded-full text-center inline-block w-[100px]  ${
                             user.status === 'Actif'
                               ? 'bg-succes_light text-sucess'
                               : 'bg-gray text-light_text'

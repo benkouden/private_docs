@@ -78,3 +78,10 @@ export const organisations = Array.from({ length: 50 }, (_, i) => ({
   statut: ["Actif", "Bloqué", "Inactif", "En attente"][i % 4], // Statut tournant
 }));
 
+
+export const admins = Array.from({ length: 50 }, (_, i) => ({
+  name: `Benjamin Evident`, 
+  email: `norman@example.com`,
+  statut: ["Actif", "Bloqué"][i % 2], // Statut tournant
+}));
+

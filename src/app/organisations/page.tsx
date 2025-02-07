@@ -149,12 +149,12 @@ const Dashboard = () => {
                       </td>
                       <td className='py-3  flex items-center'>
                         <div className='flex items-center'>
-                          <span className=' font-urbanist text-sm font-medium leading-5'>
+                          <span className=' font-urbanist text-[16px] font-medium leading-5'>
                             {organisation.name}
                           </span>
                         </div>
                       </td>
-                      <td className='py-3 font-urbanist text-sm font-medium leading-5 '>
+                      <td className='py-3 font-urbanist text-[16px] font-medium leading-5 '>
                         {organisation.users}
                       </td>
                       <td className='py-3  flex items-center'>
@@ -166,12 +166,12 @@ const Dashboard = () => {
                               {getInitials(organisation.name)}
                             </span>
                           </div>
-                          <span className='ml-2 font-urbanist text-sm font-medium leading-5'>
+                          <span className='ml-2 font-urbanist text-[16px] font-medium leading-5'>
                             {organisation.name}
                           </span>
                         </div>
                       </td>
-                      <td className='py-3 font-urbanist text-sm font-medium leading-5 '>
+                      <td className='py-3 font-urbanist text-[16px] font-medium leading-5 '>
                         {organisation.email}
                       </td>
                       <td className='py-3'>

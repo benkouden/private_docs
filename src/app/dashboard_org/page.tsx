@@ -119,12 +119,12 @@ const Dashboard = () => {
                       </td>
                       <td className='py-3  flex items-center'>
                         <div className='flex items-center'>
-                          <span className=' font-urbanist text-sm font-medium leading-5'>
+                          <span className=' font-urbanist text-[16px] font-medium leading-5'>
                             {organisation.name}
                           </span>
                         </div>
                       </td>
-                      <td className='py-3 font-urbanist text-sm font-medium leading-5 '>
+                      <td className='py-3 font-urbanist text-[16px] font-medium leading-5 '>
                         {organisation.users}
                       </td>
                       <td className='py-3  flex items-center'>
@@ -136,12 +136,12 @@ const Dashboard = () => {
                               {getInitials(organisation.name)}
                             </span>
                           </div>
-                          <span className='ml-2 font-urbanist text-sm font-medium leading-5'>
+                          <span className='ml-2 font-urbanist text-[16px] font-medium leading-5'>
                             {organisation.name}
                           </span>
                         </div>
                       </td>
-                      <td className='py-3 font-urbanist text-sm font-medium leading-5 '>
+                      <td className='py-3 font-urbanist text-[16px] font-medium leading-5 '>
                         {organisation.email}
                       </td>
                       <td className='py-3'>
@@ -151,7 +151,7 @@ const Dashboard = () => {
                               organisation.statut === 'Actif'
                                 ? 'bg-succes_light text-sucess'
                                 : organisation.statut === 'Bloqué'
-                                ? 'bg-succes_light text-danger'
+                                ? 'bg-danger_light text-danger'
                                 : organisation.statut === 'Inactif'
                                 ? 'bg-gray text-light_text'
                                 : 'bg-info_light text-info' // En attente
