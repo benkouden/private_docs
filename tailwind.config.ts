@@ -23,7 +23,8 @@ export default {
        succes_light :" #ECF9E8",
        danger_light:"#FDEBE8",
        info:"#30B2EA",
-       info_light:"#EAF7FC"
+       info_light:"#EAF7FC",
+       bgmodal:"#04060FCC"
 
       },
     },

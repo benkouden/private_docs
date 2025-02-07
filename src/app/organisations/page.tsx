@@ -25,6 +25,7 @@ import Case from '../../assets/Rectangle.svg'
 import { organisations } from '@/constants'
 
 import Hearder_desctop from '@/components/hearder_desctop'
+import Add_organisation from '@/components/add_organisation'
 const getInitials = (name: string): string => {
   if (!name) return ''
   const words = name.split(' ')
@@ -36,6 +37,7 @@ const ITEMS_PER_PAGE = 12
 
 const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState(1)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const totalPages = Math.ceil(organisations.length / ITEMS_PER_PAGE)
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
@@ -43,6 +45,9 @@ const Dashboard = () => {
     startIndex,
     startIndex + ITEMS_PER_PAGE
   )
+  const openModal = () => setIsModalOpen(true) // Ouvrir le modal
+  const closeModal = () => setIsModalOpen(false) // Fermer le modal
+
   return (
     <div className='flex w-full min-h-screen text-text font-Urbanist overflow-hidden'>
       {/* Sidebar */}
@@ -95,11 +100,14 @@ const Dashboard = () => {
                     </span>
                     <Image src={che} alt='item5' className='' />
                   </div>
-                  <div className=' text-center ml-96 justify-center  items-center px-1 flex bg-primary  rounded-3xl  w-[200px] h-[40px] '>
+                  <button
+                    onClick={openModal} // Ouvrir le modal
+                    className='text-center ml-96 justify-center items-center px-1 flex bg-primary rounded-3xl w-[200px] h-[40px]'
+                  >
                     <span className='font-urbanist text-center text-[14px] text-white font-semibold leading-[20px]'>
-                      Ajouter une organisaton
+                      Ajouter une organisation
                     </span>
-                  </div>
+                  </button>
                 </div>
                 <div className=' w-full  '>
                   <Image
@@ -181,7 +189,7 @@ const Dashboard = () => {
                               organisation.statut === 'Actif'
                                 ? 'bg-succes_light text-sucess'
                                 : organisation.statut === 'Bloqué'
-                                ? 'bg-succes_light text-danger'
+                                ? 'bg-danger_light text-danger'
                                 : organisation.statut === 'Inactif'
                                 ? 'bg-gray text-light_text'
                                 : 'bg-info_light text-info' // En attente
@@ -237,6 +245,12 @@ const Dashboard = () => {
           </div>
         </div>
       </main>
+      {/* Modal */}
+      {isModalOpen && (
+        <div className='fixed inset-0 flex items-center justify-center bg-bgmodal z-50'>
+          <Add_organisation onClose={closeModal} />
+        </div>
+      )}
     </div>
   )
 }
