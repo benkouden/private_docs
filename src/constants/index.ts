@@ -1,3 +1,17 @@
+import Org from '../assets/buildings.svg'
+import People from '../assets/people.svg'
+import Archives from '../assets/archives.svg'
+import Maxi from '../assets/maximize-3.svg'
+
+
+export const card = [
+  {name:"Organisations",total:"121",icon:Org},
+  {name:"Utilisateurs",total:"9 234",icon:People},
+  {name:"Documents",total:"213 098",icon:Archives},
+  {name:"Tailles des fichiers",total:"32 GB",icon:Maxi},
+
+]
+
 export const recentFolders = [
     "CAN 2024",
     "Documents",
