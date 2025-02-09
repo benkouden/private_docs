@@ -1,105 +1,105 @@
-import { GeneralHtmlAttr } from "./declaration"
-export function HomeIcon({ className, ...props }: GeneralHtmlAttr) {
-    return (
-      <svg
-        {...props}
-        className={`text-inherit ${className}`} // 🔥 Ajoute la classe Tailwind ici
-        width='24'
-        height='25'
-        viewBox='0 0 24 25'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <path
-          d='M9.02 3.33999L3.63 7.53999C2.73 8.23999 2 9.72999 2 10.86V18.27C2 20.59 3.89 22.49 6.21 22.49H17.79C20.11 22.49 22 20.59 22 18.28V11C22 9.78999 21.19 8.23999 20.2 7.54999L14.02 3.21999C12.62 2.23999 10.37 2.28999 9.02 3.33999Z'
-          stroke='currentColor'
-          strokeWidth={2}
-          strokeLinecap='round'
-          strokeLinejoin='round'
-        />
-        <path
-          d='M12 18.49V15.49'
-          stroke='currentColor'
-          strokeWidth='1.5'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-        />
-      </svg>
-    )
-  }
 import React from "react";
 
-  
-const BuildingIcon: React.FC<GeneralHtmlAttr> = ({ className, ...props }) => {
-    return (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={`text-inherit ${className}`}
-        {...props}
-      >
-        <path
-          d="M17.3333 29.3333H6.66663C3.99996 29.3333 2.66663 28 2.66663 25.3333V14.6667C2.66663 12 3.99996 10.6667 6.66663 10.6667H13.3333V25.3333C13.3333 28 14.6666 29.3333 17.3333 29.3333Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M13.4799 5.33333C13.3733 5.73333 13.3333 6.17333 13.3333 6.66666V10.6667H6.66663V7.99999C6.66663 6.53333 7.86663 5.33333 9.33329 5.33333H13.4799Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M18.6666 10.6667V17.3333"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M24 10.6667V17.3333"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M22.6666 22.6667H20C19.2666 22.6667 18.6666 23.2667 18.6666 24V29.3333H24V24C24 23.2667 23.4 22.6667 22.6666 22.6667Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M8 17.3333V22.6667"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M13.3334 25.3333V6.66667C13.3334 4.00001 14.6667 2.66667 17.3334 2.66667H25.3334C28 2.66667 29.3334 4.00001 29.3334 6.66667V25.3333C29.3334 28 28 29.3333 25.3334 29.3333H17.3334C14.6667 29.3333 13.3334 28 13.3334 25.3333Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeMiterlimit="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    );
-  };
+// Utilisation de SVGProps pour spécifier le bon type pour les SVG
+export function HomeIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      className={`text-inherit ${className}`}
+      width="24"
+      height="25"
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.02 3.33999L3.63 7.53999C2.73 8.23999 2 9.72999 2 10.86V18.27C2 20.59 3.89 22.49 6.21 22.49H17.79C20.11 22.49 22 20.59 22 18.28V11C22 9.78999 21.19 8.23999 20.2 7.54999L14.02 3.21999C12.62 2.23999 10.37 2.28999 9.02 3.33999Z"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 18.49V15.49"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+const BuildingIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({ className, ...props }) => {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`text-inherit ${className}`}
+      {...props}
+    >
+      <path
+        d="M17.3333 29.3333H6.66663C3.99996 29.3333 2.66663 28 2.66663 25.3333V14.6667C2.66663 12 3.99996 10.6667 6.66663 10.6667H13.3333V25.3333C13.3333 28 14.6666 29.3333 17.3333 29.3333Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.4799 5.33333C13.3733 5.73333 13.3333 6.17333 13.3333 6.66666V10.6667H6.66663V7.99999C6.66663 6.53333 7.86663 5.33333 9.33329 5.33333H13.4799Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18.6666 10.6667V17.3333"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M24 10.6667V17.3333"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22.6666 22.6667H20C19.2666 22.6667 18.6666 23.2667 18.6666 24V29.3333H24V24C24 23.2667 23.4 22.6667 22.6666 22.6667Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 17.3333V22.6667"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.3334 25.3333V6.66667C13.3334 4.00001 14.6667 2.66667 17.3334 2.66667H25.3334C28 2.66667 29.3334 4.00001 29.3334 6.66667V25.3333C29.3334 28 28 29.3333 25.3334 29.3333H17.3334C14.6667 29.3333 13.3334 28 13.3334 25.3333Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 export default BuildingIcon;
 
 export function UsersGroupIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -156,21 +156,21 @@ export function LogoutIcon(props: React.SVGProps<SVGSVGElement>) {
       {...props}
     >
       <path
-        d="M8.8999 7.55999C9.2099 3.95999 11.0599 2.48999 15.1099 2.48999H15.2399C19.7099 2.48999 21.4999 4.27999 21.4999 8.74999V15.27C21.4999 19.74 19.7099 21.53 15.2399 21.53H15.1099C11.0899 21.53 9.2399 20.08 8.9099 16.54"
+        d="M8.8999 7.55999C9.2099 3.95999 11.0599 2.48999 15.1099 2.48999H15.2399C19.7099 2.48999 21.4999 4.27999 21.4999 8.06999V15.93C21.4999 19.72 19.7099 21.51 15.2399 21.51C11.0599 21.51 9.2099 20.04 8.8999 16.44"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M15.0001 12H3.62012"
+        d="M15.24 15.93H3.79999"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M5.85 8.65002L2.5 12L5.85 15.35"
+        d="M5.44006 12.93L3.80006 15.03L5.44006 17.03"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -179,7 +179,3 @@ export function LogoutIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-
-  
-  
