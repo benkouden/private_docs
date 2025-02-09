@@ -19,6 +19,7 @@ import Sidebar from '@/components/sidebar'
 
 export interface Admin {
     name: string;
+    prenom:string
     email: string;
     statut: string;
   
