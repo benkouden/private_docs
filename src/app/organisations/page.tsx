@@ -1,32 +1,18 @@
 'use client'
-
 import { useState } from 'react'
 import Image from 'next/image'
-import Logo from '../../assets/Logo Private.svg'
-import NavItem1 from '../../assets/home-2.svg'
-import NavItem2 from '../../assets/document-text.svg'
-import NavItem3 from '../../assets/profile-2user.svg'
-
 import che from '../../assets/Path.svg'
 import cheleft from '../../assets/chevron_left.svg'
 import cheright from '../../assets/chevron-right.svg'
-
 import Trash from '../../assets/trash.svg'
-
-import NavItem4 from '../../assets/archive.svg'
-import NavItem5 from '../../assets/setting-2.svg'
-import NavItem6 from '../../assets/logout1.svg'
-
 import Search from '../../assets/Search.svg'
 import Seeting from '../../assets/setting-3.svg'
-
 import Case from '../../assets/Rectangle.svg'
-
 import { organisations } from '@/constants'
-
 import Hearder_desctop from '@/components/hearder_desctop'
 import Add_organisation from '@/components/add_organisation'
 import Delete_organisations from '@/components/delete_organisations'
+import Sidebar from '@/components/sidebar'
 
 
 export interface Organisation {
@@ -72,33 +58,7 @@ const Dashboard = () => {
   return (
     <div className='flex w-full min-h-screen text-text font-Urbanist overflow-hidden'>
       {/* Sidebar */}
-      <aside className='w-[80px] h-full p-[32px_10px] justify-between bg-white border-r border-blue_Gray flex flex-col py-4'>
-        <div className='mb-40 pt-6'>
-          <Image
-            src={Logo}
-            alt='Private Docs Logo'
-            className='w-[163px] h-[36px]'
-          />
-        </div>
-        <nav className='flex w-[80px] flex-col space-y-8'>
-          <Image
-            src={NavItem1}
-            alt='item1'
-            className='w-[72px] h-[26px] border-r-4 border-primary'
-          />
-          <Image src={NavItem2} alt='item2' className='w-[72px] h-[26px]' />
-          <Image src={NavItem3} alt='item3' className='w-[72px] h-[26px]' />
-          <Image src={NavItem4} alt='item4' className='w-[72px] h-[26px]' />
-          <Image src={NavItem5} alt='item5' className='w-[72px] h-[26px]' />
-        </nav>
-        <div className='mt-[725px]'>
-          <Image
-            src={NavItem6}
-            alt='Private Docs Logo'
-            className='w-[72px] h-[26px]'
-          />
-        </div>
-      </aside>
+      <Sidebar/>
 
       {/* Main Content */}
       <main className='flex-1 ml-5 p-8 overflow-auto'>
@@ -130,21 +90,21 @@ const Dashboard = () => {
                     </span>
                   </button>
                 </div>
-                <div className=' w-full  '>
+                <div className=' flex items-center bg-white border border-gray h-[40px] rounded-full px-2  shadow-sm  '>
                   <Image
                     src={Search}
-                    alt='item5'
-                    className=' z-30 absolute top-[170px] right-[350px]'
+                    alt='seach'
+                    className=' '
                   />
                   <input
                     type='text'
-                    placeholder='              Rechercher une organisation                 '
-                    className=' relative h-[40px] w-[320px]   font-Urbanist text-[12px] font-normal leading-[19.2px] border border-blue_Gray rounded-full focus:outline-none focus:ring-2'
+                    placeholder='    Rechercher une organisation                 '
+                    className='   w-[320px]   font-Urbanist text-[12px] font-normal leading-[19.2px]  focus:outline-none '
                   />
                   <Image
                     src={Seeting}
-                    alt='item5'
-                    className=' z-30 absolute top-[165px] right-[70px]'
+                    alt='seeting'
+                    className=' '
                   />
                 </div>
               </div>

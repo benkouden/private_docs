@@ -1,28 +1,16 @@
 'use client'
-
 import { useState } from 'react'
 import Image from 'next/image'
-import Logo from '../../assets/Logo Private.svg'
-import NavItem1 from '../../assets/home-2.svg'
-import NavItem2 from '../../assets/document-text.svg'
-import NavItem3 from '../../assets/profile-2user.svg'
 import { card } from '@/constants'
-
 import cheleft from '../../assets/chevron_left.svg'
 import cheright from '../../assets/chevron-right.svg'
-
 import Trash from '../../assets/trash.svg'
-
-import NavItem4 from '../../assets/archive.svg'
-import NavItem5 from '../../assets/setting-2.svg'
-import NavItem6 from '../../assets/logout1.svg'
-
 import Case from '../../assets/Rectangle.svg'
-
 import { organisations } from '@/constants'
-
 import Hearder_desctop from '@/components/hearder_desctop'
 import Card from '@/components/card'
+import Sidebar from '@/components/sidebar'
+
 const getInitials = (name: string): string => {
   if (!name) return ''
   const words = name.split(' ')
@@ -33,8 +21,8 @@ const getInitials = (name: string): string => {
 const ITEMS_PER_PAGE = 12
 
 const Dashboard = () => {
-  const [currentPage, setCurrentPage] = useState(1)
 
+  const [currentPage, setCurrentPage] = useState(1)
   const totalPages = Math.ceil(organisations.length / ITEMS_PER_PAGE)
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
   const currentData = organisations.slice(
@@ -42,39 +30,14 @@ const Dashboard = () => {
     startIndex + ITEMS_PER_PAGE
   )
   const filteredData = currentData.filter(
-    (organisation) => organisation.statut === 'Actif' || organisation.statut === 'En attente'
+    (organisation) =>
+      organisation.statut === 'Actif' || organisation.statut === 'En attente'
   )
-  
+
   return (
     <div className='flex w-full min-h-screen text-text font-Urbanist overflow-hidden'>
       {/* Sidebar */}
-      <aside className='w-[80px] h-full p-[32px_10px] justify-between bg-white border-r border-blue_Gray flex flex-col py-4'>
-        <div className='mb-40 pt-6'>
-          <Image
-            src={Logo}
-            alt='Private Docs Logo'
-            className='w-[163px] h-[36px]'
-          />
-        </div>
-        <nav className='flex w-[80px] flex-col space-y-8'>
-          <Image
-            src={NavItem1}
-            alt='item1'
-            className='w-[72px] h-[26px] border-r-4 border-primary'
-          />
-          <Image src={NavItem2} alt='item2' className='w-[72px] h-[26px]' />
-          <Image src={NavItem3} alt='item3' className='w-[72px] h-[26px]' />
-          <Image src={NavItem4} alt='item4' className='w-[72px] h-[26px]' />
-          <Image src={NavItem5} alt='item5' className='w-[72px] h-[26px]' />
-        </nav>
-        <div className='mt-[725px]'>
-          <Image
-            src={NavItem6}
-            alt='Private Docs Logo'
-            className='w-[72px] h-[26px]'
-          />
-        </div>
-      </aside>
+      <Sidebar/>
 
       {/* Main Content */}
       <main className='flex-1 ml-5 p-8 overflow-auto'>
@@ -84,12 +47,19 @@ const Dashboard = () => {
         <div className='   mt-10'>
           <div className='w-full h-[400]  pt-8 '>
             <div className='flex space-x-4 py-4'>
-            {card.map((elmt, index) => (
-              <Card key={index} icon={elmt.icon} title= {elmt.name} value={elmt.total} />               
-            ))}
+              {card.map((elmt, index) => (
+                <Card
+                  key={index}
+                  icon={elmt.icon}
+                  title={elmt.name}
+                  value={elmt.total}
+                />
+              ))}
             </div>
 
-            <h2 className="font-urbanist text-[20px]  py-3 text-text font-bold leading-[26px] mt-3">Dernières organisations actives </h2>
+            <h2 className='font-urbanist text-[20px]  py-3 text-text font-bold leading-[26px] mt-3'>
+              Dernières organisations actives{' '}
+            </h2>
 
             <div className=' mt-6 rounded-xl bg-gray  '>
               <table className='min-w-full'>
@@ -163,7 +133,7 @@ const Dashboard = () => {
                       </td>
 
                       <td className='py-3 items-end justify-end px-4 '>
-                        <Image src={Trash} alt='item5' className=' mt-2' />
+                        <Image src={Trash} alt='trash' className=' mt-2' />
                       </td>
                     </tr>
                   ))}

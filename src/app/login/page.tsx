@@ -13,7 +13,7 @@ const Page = () => {
       <Header/>
 
       <main className="flex flex-col items-center justify-center absolute top-[318px] left-[408px] w-[624px] h-[388px] p-[48px_64px] gap-[40px] rounded-lg bg-white shadow-lg">
-        <h2 className="w-[143px] h-[40px] font-Urbanist text-[30px] font-bold leading-[40px]">
+        <h2 className="w-[143px] h-[40px] text-text font-Urbanist text-[30px] font-bold leading-[40px]">
           Connexion
         </h2>
 
