@@ -16,10 +16,7 @@ const Edit_admin = ({ onClose, admin }: EditAdminProps) => {
   const [email, setEmail] = useState(admin?.email || '')
   const [statut, setStatut] = useState(admin?.statut) // Admin.statut par défaut
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault()
-    console.log({ name, prenom, email, statut })
-  }
+ 
   return (
     <div className='bg-white p-6 rounded-lg shadow-lg w-[624px] h-[554px] '>
       <div className='flex justify-end'>
@@ -52,7 +49,7 @@ const Edit_admin = ({ onClose, admin }: EditAdminProps) => {
           </label>
           <input
             value={prenom}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setPrenom(e.target.value)}
             id='prenom'
             className='w-full py-3 px-4 font-Urbanist placeholder-gray text-[16px] font-normal leading-[19.2px] border border-blue_Gray rounded-full focus:outline-none focus:ring-2'
           />
